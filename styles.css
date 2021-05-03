@@ -1,0 +1,15 @@
+#main-canvas {
+	width: 800px;
+	height: 500px;
+	border: 2px solid black;
+	background: #d79c50;
+	
+	/* the following 4 lines is a cool way to center something on the screen */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+body {
+	background: black;
+}
