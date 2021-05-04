@@ -24,6 +24,7 @@ app.listen(3000, () => { // Server listening on 3K.
 
 
 
+// browser code
 
 // const canvas = document.getElementById('main-canvas'); // Reference the canvas element from HTML.  
 // const ctx = canvas.getContext('2d'); // Give access to built in canvas methods. 
