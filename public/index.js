@@ -52,8 +52,7 @@ const sprites = [
 	"./images/9.png",
 	"./images/10.png",
 	"./images/11.png",
-	"./images/12.png",
-	"./images/13.png"
+	"./images/12.png"
 	];
 
 const playerSprite = new Image(); // Create new instance of Image Object
