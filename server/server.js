@@ -19,7 +19,11 @@ io.on('connection', socket => {
 		activePlayers[player.id] = player
 		socket.emit('activePlayers', activePlayers); 
 	});
+	socket.on('reset', () => {
+		activePlayers = {};
+	});
 });
+
 
 const PORT = process.env.PORT || 4000; 
 

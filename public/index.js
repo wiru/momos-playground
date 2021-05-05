@@ -29,6 +29,10 @@ let player = {
 };
 ///////////////////////////////////////////////////////////////////////////////////////
 
+document.getElementById("reset").onclick = function() {
+	socket.emit("reset")
+}
+
 window.addEventListener("keydown", function(e) { // Catch key input. e is event. This is NOT the DOWN key. It means when a button is pushed down. 
 	keys[e.key] = true;
 	player.moving = true;	
