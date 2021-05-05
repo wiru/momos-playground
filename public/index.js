@@ -25,6 +25,7 @@ let player = {
 	frameY: 0,
 	speed: 9,
 	moving: false,
+	src: ""
 };
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,27 +40,27 @@ window.addEventListener("keyup", function(e) { // This removes pressed key from 
 })
 ///////////////////////////////////////////////////////////////////////////////////////
 
-var sprites = [
-	"images/1.png",
-	"images/2.png",
-	"images/3.png",
-	"images/4.png",
-	"images/5.png",
-	"images/6.png",
-	"images/7.png",
-	"images/8.png",
-	"images/9.png",
-	"images/10.png",
-	"images/11.png",
-	"images/12.png",
-	"images/13.png",
-	"images/14.png",
-	"images/15.png",
-	"images/16.png",
+const sprites = [
+	"./images/1.png",
+	"./images/2.png",
+	"./images/3.png",
+	"./images/4.png",
+	"./images/5.png",
+	"./images/6.png",
+	"./images/7.png",
+	"./images/8.png",
+	"/.images/9.png",
+	"./images/10.png",
+	"./images/11.png",
+	"./images/12.png",
+	"./images/13.png"
 	];
 
 const playerSprite = new Image(); // Create new instance of Image Object
-playerSprite.src = getRandomSprite(); // Where to get the sprite sheet from. 
+playerSprite.src = "./images/1.png"; // Where to get the sprite sheet from. 
+player.src = getRandomSprite();
+
+// console.log(player.src)
 
 const background = new Image();
 background.src = "./images/background.jpg";
@@ -72,7 +73,7 @@ let fps, fpsInterval, startTime, now, then, elapsed;
 
 
 function getRandomSprite() {
-     var randomNum = Math.floor(Math.random() * sprites.length);
+     let randomNum = Math.floor(Math.random() * sprites.length);
      return sprites[randomNum];
 }
 
@@ -139,8 +140,10 @@ function animate() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear screen after every frame??. *thoughts* isn't this weird? Does it redraw background every time??
 		ctx.drawImage(background, 0, 0, canvas.width, canvas.height); // canvas has 3 methods. this is one of them. We use 5 arg short version here. Here we draw our background from 0,0 to width and height. 
 		for (const player in activePlayers) {
-			// console.log(activePlayers[player])
-			drawSprite(playerSprite, 			// This is the player Image Object. Contains src of sprite sheet.   
+			// console.l	og(activePlayers[player])
+			let img = new Image()
+			img.src = activePlayers[player].src
+			drawSprite(img, 			// This is the player Image Object. Contains src of sprite sheet.   
 				activePlayers[player].width * activePlayers[player].frameX,  // Sprite height x multiplier. / TO CUT OUT FROM SPRITE SHEET. 	
 				activePlayers[player].height * activePlayers[player].frameY,	// Sprite height y multiplier. / TO CUT OUT FROM SPRITE SHEET.
 				activePlayers[player].width, 			// Sprite width. / TO CUT OUT FROM SPRITE SHEET.

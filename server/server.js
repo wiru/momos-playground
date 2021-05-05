@@ -2,7 +2,6 @@ const path = require('path');
 const http = require('http'); // used by express under the hood. CreateServer we want directly though. 
 const express = require('express');
 const socketio = require('socket.io');
-const uuid = require('uuid').v4;
 
 const app = express();
 const server = http.createServer(app);
