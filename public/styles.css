@@ -13,3 +13,12 @@
 body {
 	background: black;
 }
+h1 {
+	margin-bottom: auto;
+	color: pink;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 5rem;
+	font-family: 'Courier New', Courier, monospace;
+	
+}
