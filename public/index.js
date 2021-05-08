@@ -88,7 +88,6 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) { // this takes 9 argum
 
 socket.on('update', playerObjs => {
 	activePlayers = playerObjs;
-	animate();
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -140,7 +139,8 @@ function animate() {
 			); // Takes sprite four corners from sprite sheet.
 		}
 		socket.emit("player", player)
-	}
+		requestAnimationFrame(animate)
+}
 
 function moveTracker() {
 	setInterval(()=> {
